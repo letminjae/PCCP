@@ -1,7 +1,6 @@
-# 
+# 간단한 식 계산하기
 
-def solution():
-  answer = 0
-  return answer
+def solution(binomial):
+    return eval(binomial)
 
-print(solution())
+print(solution("43 + 12"))

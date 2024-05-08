@@ -1,7 +1,11 @@
-# 
+# 유한소수 판별하기
 
-def solution():
-  answer = 0
-  return answer
+from math import gcd
 
-print(solution())
+def solution(a, b):
+    b = b / gcd(a, b)
+    for i in [2, 5]:
+        while not b % i:
+            b //= i
+
+    return 1 if b == 1 else 2

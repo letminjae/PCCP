@@ -1,7 +1,4 @@
-# 
+# 문자열 출력하기
 
-def solution():
-  answer = 0
-  return answer
-
-print(solution())
+str = input()
+print(str)

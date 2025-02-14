@@ -1,3 +1,5 @@
+#카카오 코딩테스트 - 오픈채팅방
+
 #실패케이스 (시간복잡도 실패)
 
 def solutionFAIL(records):
@@ -40,3 +42,35 @@ def solutionFAIL(records):
   return updated_answer
 
 solutionFAIL(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
+
+# 실패 이유는 이중for문 때문이지만, 코드가 더러워서 문제를 새롭게 풀었다.
+
+def solution(records):
+  answer = []
+  nickname_dict = {}
+ 
+  for record in records:
+    # 기록 정제
+    state, id, *nickname = record.split(" ")
+   
+    # Enter 상태일 때
+    if state == "Enter":
+      nickname_dict[id] = nickname[0]
+      answer.append((id, '님이 들어왔습니다.'))
+    # Leave 상태일 때
+    elif state == "Leave":
+      answer.append((id, '님이 나갔습니다.'))
+    # Change 상태일 때
+    elif state == "Change":
+      nickname_dict[id] = nickname[0]
+
+  updated_answer = []
+  # -> 새로운 시간복잡도 케이스 고려 O(n)
+  for id, message in answer:
+    updated_answer.append(f"{nickname_dict[id]}{message}")
+
+  return updated_answer
+
+solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
+
+# ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]

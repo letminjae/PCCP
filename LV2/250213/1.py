@@ -1,3 +1,5 @@
+# 카카오 코딩테스트 - 주차 요금 계산
+
 import math
 
 def time_to_minutes(time_str):

@@ -25,15 +25,14 @@ def solution(fees, records):
         all_time_dict[car_number] += time - record_dict[car_number]
       del(record_dict[car_number])
       print(f"time dict - {all_time_dict}") # 딕셔너리 확인용
-  # 출차 기록이 없고 입차 기록만 있을 때, 23시간59분 => 1439분
+  # 출차 기록이 없고 입차 기록만 있을 때
   if len(record_dict) != 0:
     print(True)
     for key in record_dict:
-      print(key)
       if key in all_time_dict.keys():
-        all_time_dict[key] += 1439 - record_dict[key]
+        all_time_dict[key] += time_to_minutes("23:59") - record_dict[key]
       else:
-        all_time_dict[key] = 1439 - record_dict[key]
+        all_time_dict[key] = time_to_minutes("23:59") - record_dict[key]
   # 차량번호 낮은순으로 정렬
   all_time_dict = dict(sorted(all_time_dict.items(), key=lambda x:x[0]))
   print(f"recorded dict - {record_dict}")

@@ -1,3 +1,5 @@
+# 탐욕법 - 큰 수 만들기
+
 # 시간복잡도 초과 실패
 # from itertools import combinations
 

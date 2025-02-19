@@ -8,7 +8,7 @@ def solution(name):
   for i in range(len(name)):
     # 왼쪽, 오른쪽 : 타겟-A 또는 Z-타겟+1
     count += min(ord(name[i])-ord('A'), ord('Z')-ord(name[i])+1)
-   
+    
     # 위, 아래
     # j값 구하기 : A가 나올 때까지 인덱스 이동
     j = i+1

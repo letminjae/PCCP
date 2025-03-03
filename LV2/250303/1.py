@@ -13,7 +13,7 @@ def solution(files):
                 num_check = True
             elif num_check == False:
                 head += file[i]
-            else:
+            else: # num_check == True이고, 숫자가 아닌 문자가 나오면
                 tail = file[i:]
                 break
         answer.append((head, number, tail))

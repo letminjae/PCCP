@@ -13,7 +13,8 @@ def convert_sharp_notes(melody):
                   .replace("D#", "d")
                   .replace("F#", "f")
                   .replace("G#", "g")
-                  .replace("A#", "a"))
+                  .replace("A#", "a")
+                  .replace("B#", "b")) # 설명 잘못 기재로 B# 추가
 
 def solution(m, musicinfos):
     answer = None
@@ -35,7 +36,6 @@ def solution(m, musicinfos):
             continue  # 이미 answer에 저장된 곡이 먼저 나온 곡이므로 유지
 
     return answer if answer else "(None)"
-      
     
 solution("ABCDEFG", ["12:00,12:14,HELLO,CDEFGAB", "13:00,13:05,WORLD,ABCDEF"])
 # "HELLO"

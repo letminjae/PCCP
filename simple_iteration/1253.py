@@ -1,4 +1,4 @@
-# 1253
+# 코드업 1253
 
 a,b = input().split()
 a = int(a)

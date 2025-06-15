@@ -7,27 +7,22 @@ N = int(input())
 S = set()
 
 for _ in range(N):
-  arr = list(input().split())
-  first = arr[0]
-  
-  if first == 'add':
-    first.add(int(arr[1]))
-  elif first == 'remove':
-    try:
-      S.remove(int(arr[1]))
-    except:
-      pass
-  elif first == 'check':
-    if int(arr[1]) in S:
-        print(1)
-    else:
-      print(0)
-  elif first == 'toggle':
-    if int(arr[1]) in S:
-      S.remove(int(arr[1]))
-    else:
-      S.add(int(arr[1]))
-  elif first == 'all':
-    S = set([i for i in range(1, 21)])
-  else:
-    S = set()
+    arr = input().split()
+    command = arr[0]
+
+    if command == 'add':
+        S.add(int(arr[1]))
+    elif command == 'remove':
+        S.discard(int(arr[1]))
+    elif command == 'check':
+        print(1 if int(arr[1]) in S else 0)
+    elif command == 'toggle':
+        num = int(arr[1])
+        if num in S:
+            S.remove(num)
+        else:
+            S.add(num)
+    elif command == 'all':
+        S = set(range(1, 21))
+    elif command == 'empty':
+        S = set()
